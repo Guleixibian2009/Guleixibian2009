@@ -4,7 +4,7 @@
 - 👋 Hi, I’m @Guleixibian2009
 - 👀 I’m interested in Markdown and Python and also website building.
 - 🌱 I’m currently learning Markdown...and building [my website](https://guleixibian2009.github.io/)!
-- 💞️ I’m looking to collaborate on ... im thinking.Wait a sec and maybe i will know.(If you would like to help me,please follow me and send me an email)
+- 💞️ I’m looking to collaborate on ... im still thinking.
 - 📫 How to reach me: guleixibian@outlook.com / guleixibian2009@outlook.com
 
 <!---
