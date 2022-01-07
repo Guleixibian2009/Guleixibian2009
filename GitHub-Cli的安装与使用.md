@@ -127,3 +127,20 @@ $ git checkout master  //不需要 -b ，因为不是新分支
 $ gh repo sync  //这个指令可以同步当前分支
 ```
 
+如果你的master分支中多了一开始创建的文件，那么，这个PR就是真的被合并了。
+最后，如果你还想了解GitHub-Cli更多有关命令，你可以运行：
+
+```bash
+$ gh <command> <subcommand> --help
+  //此处 <command>/<subcommand> 要用具体的命令代替
+  //如： gh repo clone --help
+```
+
+就可以获得有关命令的更多信息了！
+
+## 六.写在最后
+经过我的一通讲解，相信大家已经掌握了`GitHub-Cli`的一些基本操作，如登录，同步仓库，等等，并且“深入”了解了`Pull Request`。在此希望`GitHub-Cli`可以和广大码农一同进步，一同成长！我们下期再见~~~
+
+
+
+
