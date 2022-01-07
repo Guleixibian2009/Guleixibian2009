@@ -93,3 +93,23 @@ $ gh pr create  //等同于 $ gh pr cr
 ```bash
 https://github.com/Guleixibian2009/test/pull/1
 ```
+
+![PR_Create](https://raw.githubusercontent.com/Guleixibian2009/Guleixibian2009/GitHub-Drive/PR_Create.png)  
+
+### 2.PR的合并
+很明显，单独创建一个PR是没有用的。我们需要把他合并到主分支里！首先我们看一下到底有没有这个PR：  
+
+```bash
+$ gh pr list
+```
+
+这个命令可以帮助我们查看所有的PR。比如下面的仓库就有2个进行中的PR:  
+
+![PR_List](https://raw.githubusercontent.com/Guleixibian2009/Guleixibian2009/GitHub-Drive/PR_List.jpg)
+
+Em……只需要注意最上面那一行命令就可以了，后面两条是添加了几个限定条件。（看起来好复杂）  
+很明显我们的确有进行中的PR。为了将其合并入主分支，我们来Merge刚刚那个PR。  
+
+示意图如下：
+
+![PR_Merge](https://raw.githubusercontent.com/Guleixibian2009/Guleixibian2009/GitHub-Drive/PR_Merge.png)
