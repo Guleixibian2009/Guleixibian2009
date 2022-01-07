@@ -15,9 +15,32 @@
 
 ### 1. 安装包安装（通用）
 访问[这个链接](https://github.com/cli/cli/releases/tag/v2.4.0)，找到`Assets`。然后你会找到**很多很多的安装包**，在比较下面的地方有一个`gh_2.4.0_windows_amd64.msi`的安装文件（*貌似是64位的*）。尝试下载它……
-	下载下来以后，直接运行安装即可。安装完成后，打开`CMD`运行：
-  ```bash
-  $ gh --version
-  ```
+下载下来以后，直接运行安装即可。安装完成后，打开`CMD`运行：
 
+ ```bash
+ $ gh --version  
+ ```
+如果CMD返回给你有用的信息（*而不是“gh“不是内部或外部命令，也不是可运行的程序或批处理文件。*），那么说明你已经安装好了！
 
+### 2. Chocolatey安装
+使用过Chocolatey的同志直接运行下面的命令！
+
+```bash
+$ clist gh
+$ choco install gh
+```
+嗯……搞定了！
+
+## 三. Gh登录时刻！
+准备好你的GitHub账号，我们终于要登录了！登录也很简单，只要运行：
+
+```bash
+$ gh auth login  //这很简单吧！
+```
+
+然后就会有下面的提示语：
+
+![Auth_Login](https://raw.githubusercontent.com/Guleixibian2009/Guleixibian2009/GitHub-Drive/Auth_Login.png)
+
+*图片来源于网络……所以不是我的用户名*  
+两种登陆方法：你可以使用**浏览器登陆账号**后登录`GitHub-Cli`，也可以使用**粘贴个人验证码**登录。由于`GitHub-Cli`的内核也是用到`Git`的，所以它也会要求你配置`Git`，选择`SSH`或者`HTTPS`貌似都差不多。
