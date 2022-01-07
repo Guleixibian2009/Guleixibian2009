@@ -113,3 +113,17 @@ Em……只需要注意最上面那一行命令就可以了，后面两条是添
 示意图如下：
 
 ![PR_Merge](https://raw.githubusercontent.com/Guleixibian2009/Guleixibian2009/GitHub-Drive/PR_Merge.png)
+
+当然在合并`PR`时我们会需要选择一些基本信息，一般情况下选择`Create a merge commit`。如果你不想删除这个`test`分支，你可以在第二个选项中选择`No`。最后它会有提示语：
+
+```bash
+Merged pull request #1
+```
+
+然后，我们怎么知道自己的`PR`真的真的已经被合并了呢？我们可以切换回原分支`master`。
+
+```bash
+$ git checkout master  //不需要 -b ，因为不是新分支
+$ gh repo sync  //这个指令可以同步当前分支
+```
+
