@@ -43,4 +43,53 @@ $ gh auth login  //这很简单吧！
 ![Auth_Login](https://raw.githubusercontent.com/Guleixibian2009/Guleixibian2009/GitHub-Drive/Auth_Login.png)
 
 *图片来源于网络……所以不是我的用户名*  
-两种登陆方法：你可以使用**浏览器登陆账号**后登录`GitHub-Cli`，也可以使用**粘贴个人验证码**登录。由于`GitHub-Cli`的内核也是用到`Git`的，所以它也会要求你配置`Git`，选择`SSH`或者`HTTPS`貌似都差不多。
+两种登陆方法：你可以使用**浏览器登陆账号**后登录`GitHub-Cli`，也可以使用**粘贴个人验证码**登录。由于`GitHub-Cli`的内核也是用到`Git`的，所以它也会要求你配置`Git`，选择`SSH`或者`HTTPS`貌似都差不多。  
+如果最后它提示你类似Logged in as …说明你成功了！！  
+
+## 四.关于你的仓库
+使用“项目托管平台”你没有仓库怎么行？用你本地的Git或者在线创建一个仓库，然后你就可以操作了。  
+![New_Repo](https://raw.githubusercontent.com/Guleixibian2009/Guleixibian2009/GitHub-Drive/New_Repo.png)  
+创建一个仓库后，把它拉取到本地。这个时候GitHub-Cli就能派上用场了：  
+
+```bash
+$ gh repo clone {username}/{repo_name}
+```
+
+现在你的电脑上应该就有了一个`本地仓库`。现在让我们来更新它！
+首先我们来切换到一个新的分支*（Git版本库中存放项目不同版本的一种机制）* 。然后，做一点点修改，然后再提交回远程端 *（在这里就是GitHub！）*：
+
+```bash
+$ git checkout –b test  //checkout -b 会创建并进入一个新的分支
+$ mkdir Test12.17  //创建一个文件夹
+$ cd Test12.17
+$ echo “What makes unicorns cry?”>>test.txt  //做一点点修改
+```
+
+现在我们已经生成了一个新文件夹，一个新文件并进入了一个新的分支。然后，用大家都熟知的Git来进行以下操作：
+
+```bash
+$ git add .  //缓存所有修改
+$ git commit –m “Update 12.17”  //创建一个更新记录
+$ git push –-set-upstream origin test  //上传 注意这里需要配置远程
+```
+
+现在貌似我们的更改已经被上传到`GitHub`上面去了！不过很明显，我们提交到的是一个叫做`test`的分支，我们还需要把他提交到`master`，即**主分支**上去。
+
+## 五.PRs
+其实我们的确可以将更新直接提交到`master`上，但这不是重点——在`GitHub`上更多的是**多人合作项目**，这时将更新代码直接提交到主分支上貌似就有点风险了 *（万一有Bug呢）* 。然后，我们就可以尝试一种新的方式——`Pull Request`。（感觉前面铺垫好多）
+`Pull Request` 是一种通知机制。你修改了他人的代码，将你的修改通知原来的作者，希望他合并你的修改，这就是 `Pull Request`。`Pull Request` 本质上是一种*软件的合作方式*，是将涉及不同功能的代码，纳入主干的一种流程。这个过程中，还可以进行讨论、审核和修改代码。
+所以，你学废了吗……
+
+### 1.创建PR
+现在我们来尝试创建一个新PR。当然，我们是个人项目，所以PR仅起到演示的效果。
+如图所示，创建一个PR我们需要运行：
+
+```bash
+$ gh pr create  //等同于 $ gh pr cr
+```
+
+同时我们会需要提供例如标题、基本信息等等等等。当输出类似以下的提示时，你就成功了。
+
+```bash
+https://github.com/Guleixibian2009/test/pull/1
+```
