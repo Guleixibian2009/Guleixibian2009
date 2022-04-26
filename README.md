@@ -19,3 +19,6 @@ You can click the Preview link to take a look at your changes.
 4. 🎉 Merged PR [#1](https://github.com/Guleixibian2009/Guleixibian2009/pull/1) in [Guleixibian2009/Guleixibian2009](https://github.com/Guleixibian2009/Guleixibian2009)
 5. 💪 Opened PR [#1](https://github.com/Guleixibian2009/Guleixibian2009/pull/1) in [Guleixibian2009/Guleixibian2009](https://github.com/Guleixibian2009/Guleixibian2009)
 <!--END_SECTION:activity-->
+
+### My Commit Snake :snake:
+![Snake](https://raw.githubusercontent.com/Guleixibian2009/Guleixibian2009/master/dist/github-snake.svg)
