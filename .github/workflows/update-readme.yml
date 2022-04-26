@@ -30,4 +30,5 @@ jobs:
         uses: endbug/add-and-commit@v7.2.1
         with:
           branch: master
-          message: 'Generate Snake' 
+          message: 'Daily Generate Snake' 
+          committer_email: default_author
