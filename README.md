@@ -11,7 +11,7 @@ Guleixibian2009/Guleixibian2009 is a ✨ special ✨ repository because its `REA
 You can click the Preview link to take a look at your changes.
 --->
 
-### Recent Acivities! :zap:
+### My Recent Acivities! :zap:
 <!--START_SECTION:activity-->
 1. 🗣 Commented on [#5089](https://github.com/mdn/translated-content/issues/5089) in [mdn/translated-content](https://github.com/mdn/translated-content)
 2. 🗣 Commented on [#5089](https://github.com/mdn/translated-content/issues/5089) in [mdn/translated-content](https://github.com/mdn/translated-content)
