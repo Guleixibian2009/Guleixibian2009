@@ -21,8 +21,9 @@ jobs:
           COMMIT_MSG: 'Update my README via GitHub Actions'
           MAX_LINES: 10
       - name: Generate the Snake
-        uses: Platane/snk@v2.0.0-rc.2
+        uses: Platane/snk/svg-only@v2
         with: 
           github_user_name: Guleixibian2009
-          outputs:
-              dist/snake-light.svg
+          outputs: |
+              dist/github-snake.svg
+              dist/github-snake-dark.svg?palette=github-dark
