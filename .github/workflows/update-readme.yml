@@ -92,10 +92,13 @@ jobs:
         uses: actions/checkout@v2
       - name: Get date
         run: |
-          startdate=Get-Date
-          enddate=Get-Date -Date '2022-4-27'
-          difference=New-TimeSpan -Start $startdate -End $enddate
-          output=($difference.Days * -1) + 1
+          date=`date +%Y%m%d`
+          current=`date`
+          origin=20220427
+          origintimestamp=$((`date -d "$origin" +%s`*1000+`date "+%N"`))
+          currenttimestamp=$((`date -d "$current" +%s`*1000+`date "+%N"`))
+          timegap=$(($(($currenttimestamp - $origintimestamp)) / 86400000))
+          output=$timegap
       - name: Write to comment
         uses: actions-cool/issues-helper@v1.2
         with:
@@ -103,4 +106,4 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }};
           issue-number: 2
           body: |
-            This is day ${output}. Build Status: ${build_status}. Keep working, Guleixibian2009! 
+            Today is ${date}, day ${output}. Build Status: ${build_status}. Keep working, Guleixibian2009! 
