@@ -77,7 +77,6 @@ jobs:
         with:
           branch: master
           message: 'Daily Generate Snake' 
-          committer_email: default_author
       - name: Report job status
         run: |
           echo "Status: ${{ job.status }}"
@@ -104,5 +103,4 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }};
           issue-number: 2
           body: |
-            Today is ${date}, day ${output}. Build Status: ${build_status}. Keep working, Guleixibian2009! 
-          emoji: "heart"
+            Today is ${date}, day ${output}. Build Status: ${build_status}. Keep working, Guleixibian2009!
