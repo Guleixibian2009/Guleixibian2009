@@ -81,7 +81,7 @@ jobs:
       - name: Report job status
         run: |
           echo "Status: ${{ job.status }}"
-          $build_status = "${{ job.status }}"
+          build_status = "${{ job.status }}"
   record:
     runs-on: ubuntu-latest
     name: Record Status to my Issue
