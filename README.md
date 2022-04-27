@@ -1,4 +1,4 @@
-![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Consolas&size=36&center=true&vCenter=true&height=30&lines=Hi+There!;I'm+Guleixibian2009)
+![Typing SVG](https://raw.githubusercontent.com/Guleixibian2009/Guleixibian2009/master/typing.svg)
 <img align="right" src="https://github-readme-stats.vercel.app/api?username=Guleixibian2009&show_icons=true&icon_color=CE1D2D&text_color=718096&bg_color=ffffff&hide_title=false" />
 
 - 👋 Hi, I’m @Guleixibian2009
