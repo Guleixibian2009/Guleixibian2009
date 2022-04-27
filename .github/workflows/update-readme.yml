@@ -4,6 +4,9 @@ on:
   schedule:
     - cron: '0 0/4 * * *'
   workflow_dispatch:
+  push:
+    branches: 
+    - master
 
 jobs:
   build:
@@ -11,6 +14,13 @@ jobs:
     name: Update this repo's README with recent activity
 
     steps:
+      - name: Report Start Reason and Metadata
+        run: |
+          echo "Starter is: ${{ github.actor }};"
+          echo "Repo is: ${{ github.repository }};"
+          echo "Trigger is: ${{ github.eventname }};"
+          echo "Job is: ${{ github.job }};"
+          echo "Job id is: ${{ github.run_id }};"
       - name: Checkout
         uses: actions/checkout@v2
       - name: Load Recent Acivities
@@ -26,9 +36,52 @@ jobs:
         with: 
           github_user_name: Guleixibian2009
           svg_out_path: ./dist/github-snake.svg
+      - name: Update Metrics
+        uses: lowlighter/metrics@latest
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+
+          user: Guleixibian2009
+          template: classic
+          base: header, activity, community, repositories, metadata
+          config_timezone: Asia/Shanghai
+          plugin_code: yes
+          plugin_code_days: 3
+          plugin_code_lines: 12
+          plugin_code_load: 400
+          plugin_code_visibility: public
+          plugin_followup: yes
+          plugin_followup_indepth: yes
+          plugin_followup_sections: repositories
+          plugin_isocalendar: yes
+          plugin_isocalendar_duration: full-year
+          plugin_languages: yes
+          plugin_languages_analysis_timeout: 15
+          plugin_languages_categories: markup, programming
+          plugin_languages_colors: github
+          plugin_languages_limit: 8
+          plugin_languages_recent_categories: markup, programming
+          plugin_languages_recent_days: 14
+          plugin_languages_recent_load: 300
+          plugin_languages_sections: most-used
+          plugin_languages_threshold: 0%
+          plugin_pagespeed: yes
+          plugin_pagespeed_url: .user.website
+          plugin_repositories: 100
+          plugin_skyline: yes
+          plugin_skyline_frames: 60
+          plugin_skyline_quality: 0.5
+          plugin_skyline_year: current-year
+          plugin_stargazers: yes
+          plugin_stargazers_charts_type: classic
+          plugin_stars: yes
+          plugin_stars_limit: 4
       - name: Push to GitHub
         uses: endbug/add-and-commit@v7.2.1
         with:
           branch: master
           message: 'Daily Generate Snake' 
           committer_email: default_author
+      - name: Report job status
+        run: |
+          echo "Status: ${{ job.status }}"
