@@ -14,7 +14,7 @@
 - ⚡ Fun fact **I dunno...**
 
 ### Connect with me 📧
-<a href="https://www.behance.net/guleixibian2009" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/behance.svg" alt="guleixibian2009" height="30" width="40" /></a>
+<a href="https://www.behance.net/yimingwu4" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/behance.svg" alt="guleixibian2009" height="30" width="40" /></a>
 <a href="/https://guleixibian2009.github.io/atom.xml" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/rss.svg" alt="https://guleixibian2009.github.io/atom.xml" height="30" width="40" /></a>
 
 ### Languages and Tools 💻
