@@ -103,4 +103,4 @@ jobs:
           token: ${{ secrets.METRICS_TOKEN }}
           issue-number: 2
           body: |
-            Today is ${{ date }} , day ${{ output }}. Todays build status is ${{ build_status }}! Keep working hard, Guleixibian2009!
+            $[Today is ${ date } , day ${ output }. Todays build status is ${ build_status }! Keep working hard, Guleixibian2009!]
