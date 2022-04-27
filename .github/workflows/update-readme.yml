@@ -64,10 +64,9 @@ jobs:
           plugin_languages_threshold: 0%
           plugin_pagespeed: yes
           plugin_pagespeed_url: .user.website
-          plugin_repositories: 100
           plugin_skyline: yes
           plugin_skyline_frames: 60
-          plugin_skyline_quality: 0.5
+          plugin_skyline_quality: 0.8
           plugin_skyline_year: current-year
           plugin_stargazers: yes
           plugin_stargazers_charts_type: classic
