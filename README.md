@@ -23,9 +23,9 @@
 ### My Recent Acivities! :zap:
 <img src="https://github-readme-stats.vercel.app/api?username=Guleixibian2009&show_icons=true&icon_color=CE1D2D&text_color=718096&bg_color=ffffff&hide_title=false" />  
 <!--START_SECTION:activity-->
-1. 🗣 Commented on [#5089](https://github.com/mdn/translated-content/issues/5089) in [mdn/translated-content](https://github.com/mdn/translated-content)  
-2. 🗣 Commented on [#5089](https://github.com/mdn/translated-content/issues/5089) in [mdn/translated-content](https://github.com/mdn/translated-content)  
-3. ❗️ Opened issue [#5089](https://github.com/mdn/translated-content/issues/5089) in [mdn/translated-content](https://github.com/mdn/translated-content)  
+1. 🗣 Commented on [#5089](https://github.com/mdn/translated-content/issues/5089) in [mdn/translated-content](https://github.com/mdn/translated-content)
+2. 🗣 Commented on [#5089](https://github.com/mdn/translated-content/issues/5089) in [mdn/translated-content](https://github.com/mdn/translated-content)
+3. ❗️ Opened issue [#5089](https://github.com/mdn/translated-content/issues/5089) in [mdn/translated-content](https://github.com/mdn/translated-content)
 4. 🎉 Merged PR [#1](https://github.com/Guleixibian2009/Guleixibian2009/pull/1) in [Guleixibian2009/Guleixibian2009](https://github.com/Guleixibian2009/Guleixibian2009)  
 5. 💪 Opened PR [#1](https://github.com/Guleixibian2009/Guleixibian2009/pull/1) in [Guleixibian2009/Guleixibian2009](https://github.com/Guleixibian2009/Guleixibian2009)  
 <!--END_SECTION:activity-->
