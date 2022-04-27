@@ -88,8 +88,6 @@ jobs:
     needs: build
     
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
       - name: Get date
         run: |
           date=`date +%Y%m%d`
@@ -107,3 +105,4 @@ jobs:
           issue-number: 2
           body: |
             Today is ${date}, day ${output}. Build Status: ${build_status}. Keep working, Guleixibian2009! 
+          emoji: "heart"
