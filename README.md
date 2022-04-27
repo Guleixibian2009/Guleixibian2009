@@ -1,4 +1,4 @@
-### Hi there 👋
+![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Consolas&size=36&center=true&vCenter=true&height=30&lines=Hi+There!;I'm+Guleixibian2009)
 <img align="right" src="https://github-readme-stats.vercel.app/api?username=Guleixibian2009&show_icons=true&icon_color=CE1D2D&text_color=718096&bg_color=ffffff&hide_title=false" />
 
 - 👋 Hi, I’m @Guleixibian2009
@@ -34,6 +34,10 @@ You can click the Preview link to take a look at your changes.
 
 ### My trophies 🏆
 <img src="https://github-profile-trophy.vercel.app/?username=Guleixibian2009" width="100%" />
+
+### Streak&Commit Stats 1️⃣2️⃣3️⃣
+![](https://github-readme-streak-stats.herokuapp.com/?user=Guleixibian2009)
+![](https://activity-graph.herokuapp.com/graph?username=Guleixibian2009)
 
 ### Other stats 📊
 <img src="https://cdn.jsdelivr.net/gh/Guleixibian2009/Guleixibian2009/github-metrics.svg" width="100%" alt="My status(Loading...)"/>  
