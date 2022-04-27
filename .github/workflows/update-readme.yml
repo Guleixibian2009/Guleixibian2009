@@ -85,16 +85,17 @@ jobs:
   record:
     runs-on: ubuntu-latest
     name: Record Status to my Issue
+    needs: build
     
     steps:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Get date
         run: |
-          $startdate = Get-Date
-          $enddate = Get-Date -Date '2022-4-27'
-          $difference = New-TimeSpan -Start $startdate -End $enddate
-          $output = ($difference.Days * -1) + 1
+          startdate = Get-Date
+          enddate = Get-Date -Date '2022-4-27'
+          difference = New-TimeSpan -Start $startdate -End $enddate
+          output = ($difference.Days * -1) + 1
       - name: Write to comment
         uses: actions-cool/issues-helper@v1.2
         with:
@@ -102,4 +103,4 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }};
           issue-number: 2
           body: |
-            This is day $output. Build Status: $build_status. Keep working, Guleixibian2009! 
+            This is day ${output}. Build Status: ${build_status}. Keep working, Guleixibian2009! 
