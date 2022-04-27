@@ -81,26 +81,26 @@ jobs:
         run: |
           echo "Status: ${{ job.status }}"
           build_status="${{ job.status }}"
+          github.build_status=$build_status
   record:
     runs-on: ubuntu-latest
     name: Record Status to my Issue
     needs: build
     
     steps:
-      - name: Get date
+      - name: Get Data
         run: |
           date=`date +%Y%m%d`
           current=`date`
           origin=20220427
-          origintimestamp=$((`date -d "$origin" +%s`*1000+`date "+%N"`))
-          currenttimestamp=$((`date -d "$current" +%s`*1000+`date "+%N"`))
-          timegap=$(($(($currenttimestamp - $origintimestamp)) / 86400000))
-          output=$timegap
+          timegap=$(($(($((`date -d "$current" +%s`*1000+`date "+%N"`)) - $((`date -d "$origin" +%s`*1000+`date "+%N"`)))) / 86400000))
+          github.output=$((`Today is ${date} , day ${timegap}. Todays build status is ${{ github.build_status }}! Keep working hard, Guleixibian2009!`))
       - name: Write to issue
         uses: actions-cool/issues-helper@v3
         with:
           actions: 'create-comment'
           token: ${{ secrets.METRICS_TOKEN }}
           issue-number: 2
-          body:
-            $((`Today is ${date} , day ${output}. Todays build status is ${build_status}! Keep working hard, Guleixibian2009!`))
+          body: |
+            ${{ github.output }}
+            
