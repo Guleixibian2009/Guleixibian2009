@@ -100,6 +100,6 @@ jobs:
         uses: AlexRogalskiy/github-action-issue-commenter@v2.0.1
         with:
           message: |
-            Today is ${date}, day ${output}. Today's build status: ${build_status}. Keep working, Guleixibian2009!
+            Today is ${{ date }}, day ${{ output }}. Today's build status: ${{ build_status }}. Keep working, Guleixibian2009!
           requestId: 2
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
