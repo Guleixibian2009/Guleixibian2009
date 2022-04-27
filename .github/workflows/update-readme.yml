@@ -81,7 +81,8 @@ jobs:
         run: |
           echo "Status: ${{ job.status }}"
           build_status="${{ job.status }}"
-          github.build_status=$build_status
+        env:
+          BUILD_STATUS: $build_status
   record:
     runs-on: ubuntu-latest
     name: Record Status to my Issue
@@ -94,7 +95,9 @@ jobs:
           current=`date`
           origin=20220427
           timegap=$(($(($((`date -d "$current" +%s`*1000+`date "+%N"`)) - $((`date -d "$origin" +%s`*1000+`date "+%N"`)))) / 86400000))
-          github.output=$((`Today is ${date} , day ${timegap}. Todays build status is ${{ github.build_status }}! Keep working hard, Guleixibian2009!`))
+          output=$((`Today is ${date} , day ${timegap}. Todays build status is ${{ BUILD_STATUS }}! Keep working hard, Guleixibian2009!`))
+        env: 
+          MESSAGE: ${output}
       - name: Write to issue
         uses: actions-cool/issues-helper@v3
         with:
@@ -102,5 +105,5 @@ jobs:
           token: ${{ secrets.METRICS_TOKEN }}
           issue-number: 2
           body: |
-            ${{ github.output }}
+            ${{ MESSAGE }}
             
