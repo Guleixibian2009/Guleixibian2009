@@ -97,8 +97,10 @@ jobs:
           timegap=$(($(($currenttimestamp - $origintimestamp)) / 86400000))
           output=$timegap
       - name: Write to issue
-        uses: AlexRogalskiy/github-action-issue-commenter@v2.0.1
+        uses: actions-cool/issues-helper@v3
         with:
-          message: $(("Today is " + ${date} + ", day" + ${output} + ". Today's build status is" + ${build_status} + ". Keep working, Guleixibian2009!"))
-          requestId: 2
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          actions: 'create-comment'
+          token: ${{ secrets.METRICS_TOKEN }}
+          issue-number: 2
+          body: |
+            Today is ${ date } , day ${ output }. Todays build status is ${ build_status }! Keep working hard, Guleixibian2009!
