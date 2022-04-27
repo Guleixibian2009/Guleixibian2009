@@ -96,10 +96,12 @@ jobs:
           currenttimestamp=$((`date -d "$current" +%s`*1000+`date "+%N"`))
           timegap=$(($(($currenttimestamp - $origintimestamp)) / 86400000))
           output=$timegap
+          echo $date
+          echo $output
+          echo $build_status
       - name: Write to issue
         uses: AlexRogalskiy/github-action-issue-commenter@v2.0.1
         with:
-          message: |
-            Today is ${{ date }}, day ${{ output }}. Today's build status: ${{ build_status }}. Keep working, Guleixibian2009!
+          message: `Today is $date , day $output . Today's build status is $build_status . Keep working, Guleixibian2009!`
           requestId: 2
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
