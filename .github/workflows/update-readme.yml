@@ -58,7 +58,7 @@ jobs:
           currentTimestamp=$((`date -d "$current" +%s`))
           originTimestamp=$((`date -d "2022-04-27" +%s`))
           timegap=$(($(($(( $currentTimestamp - $originTimestamp )) / 86400000 )) + 1 ))
-          output="Today is ${current}, day ${timegap}. Todays build status is ${{ needs.build.outputs.build_status }}! Keep working hard, Guleixibian2009!"
+          output="Today is ${current}, day ${timegap}. Todays build status is ${{ needs.build.outputs.build_status }}! Keep working hard, @Guleixibian2009!"
           echo "::set-output name=message::${output}"
     outputs:
       message: ${{ steps.metadata.outputs.message }}
