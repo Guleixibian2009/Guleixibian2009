@@ -59,6 +59,7 @@ jobs:
       - name: Get Data
         id: metadata
         run: |
+          bash
           trigger=${{ needs.build.outputs.trigger }}
           current=`date "+%Y-%m-%d"`
           currentTimestamp=$((`date -d "$current" +%s`))
