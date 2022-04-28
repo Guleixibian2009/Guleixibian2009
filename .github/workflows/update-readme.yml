@@ -88,7 +88,7 @@ jobs:
       - name: Send me an email
         uses: dawidd6/action-send-mail@v3.6.1
         with:
-          server_address: smtp.live.com
+          server_address: smtp.outlook.live.com
           server_port: 25
           username: ${{ secrets.MAIL_USERNAME }}
           password: ${{ secrets.MAIL_PASSWORD }}
