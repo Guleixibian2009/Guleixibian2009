@@ -45,6 +45,7 @@ jobs:
           echo "::set-output name=status::${{ job.status }}"
     outputs: 
       build_status: ${{ steps.report.outputs.status }} 
+  
   getData:
     runs-on: ubuntu-latest
     name: Get Metadata
@@ -62,6 +63,7 @@ jobs:
           echo "::set-output name=message::${output}"
     outputs:
       message: ${{ steps.metadata.outputs.message }}
+
   record:
     runs-on: ubuntu-latest
     name: Record to issue
@@ -76,6 +78,7 @@ jobs:
           issue-number: 2
           body: |
             ${{ needs.getData.outputs.message }}
+
   email:
     runs-on: ubuntu-latest
     name: Email message
