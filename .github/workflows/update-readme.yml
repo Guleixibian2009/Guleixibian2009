@@ -86,14 +86,8 @@ jobs:
     
     steps:
       - name: Send me an email
-        uses: dawidd6/action-send-mail@v3.6.1
+        uses: cinotify/github-action@v1.1.0
         with:
-          server_address: smtp.office365.com
-          server_port: 587
-          username: ${{ secrets.MAIL_USERNAME }}
-          password: ${{ secrets.MAIL_PASSWORD }}
-          subject: README has been updated!
           to: guleixibian2009@outlook.com
-          from: Guleixibian2009
+          subject: Daily Update Status
           body: ${{ needs.getData.outputs.message }}
-          secure: false
