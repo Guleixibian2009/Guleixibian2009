@@ -69,15 +69,17 @@ jobs:
     name: Record to issue
     needs: getData
 
-    steps:    
-      - name: Checkout
-        uses: actions/checkout@v2.4.2
-      - name: Write to issue
-        uses: AlexRogalskiy/github-action-issue-commenter@v2.0.1
+    steps: 
+      - name: Create or Update Comment
+        uses: peter-evans/create-or-update-comment@v2.0.0
         with:
-          GITHUB_TOKEN: ${{ secrets.METRICS_TOKEN }}
-          requestId: 2
-          message: ${{ needs.getData.outputs.message }}
+          issue-number: 2
+          body: |
+            # Build Status Report
+            ${{ steps.metadata.outputs.message }}  
+            ---
+            *This comment is automated via [GitHub Actions](https://Guleixibian2009/Guleixibian2009/actions/)*
+
 
   #email:
     #runs-on: ubuntu-latest
