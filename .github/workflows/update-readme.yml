@@ -89,7 +89,7 @@ jobs:
         uses: dawidd6/action-send-mail@v3.6.1
         with:
           server_address: smtp.office365.com
-          server_port: 993
+          server_port: 995
           username: ${{ secrets.MAIL_USERNAME }}
           password: ${{ secrets.MAIL_PASSWORD }}
           subject: README has been updated!
