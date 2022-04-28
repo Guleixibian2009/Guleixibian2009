@@ -53,8 +53,7 @@ jobs:
     steps:
       - name: Get Data
         run: |
-          date=`date +%Y%m%d`
-          current=`date`
+          current=`date +%Y%m%d`
           origin=20220427
           currentTimestamp=$((`date -d "$current" +%s`*1000+`date "+%N"`))
           originTimestamp=$((`date -d "$origin" +%s`*1000+`date "+%N"`))
