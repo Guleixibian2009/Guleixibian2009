@@ -71,23 +71,21 @@ jobs:
 
     steps:    
       - name: Write to issue
-        uses: actions-cool/issues-helper@v3
+        uses: AlexRogalskiy/github-action-issue-commenter@v2.0.1
         with:
-          actions: 'create-comment'
-          token: ${{ secrets.METRICS_TOKEN }}
-          issue-number: 2
-          body: |
-            ${{ needs.getData.outputs.message }}
+          GITHUB_TOKEN: ${{ secrets.METRICS_TOKEN }}
+          requestId: 2
+          message: ${{ needs.getData.outputs.message }}
 
-  email:
-    runs-on: ubuntu-latest
-    name: Email message
-    needs: getData
+  #email:
+    #runs-on: ubuntu-latest
+    #name: Email message
+    #needs: getData
     
-    steps:
-      - name: Send me an email
-        uses: cinotify/github-action@v1.1.0
-        with:
-          to: guleixibian2009@outlook.com
-          subject: Daily Update Status
-          body: "Build Status Report:\n${{ needs.getData.outputs.message }}\nThis email is sent via GitHub Actions."
+    #steps:
+    #  - name: Send me an email
+    #    uses: cinotify/github-action@v1.1.0
+    #    with:
+    #      to: guleixibian2009@outlook.com
+    #      subject: Daily Update Status
+    #      body: "Build Status Report:\n${{ needs.getData.outputs.message }}\nThis email is sent via GitHub Actions."
