@@ -83,6 +83,8 @@ jobs:
     needs: getData
 
     steps: 
+      - run: |
+          echo ${{ needs.getData.outputs.daily }}
       - name: Create or Update Comment
         uses: peter-evans/create-or-update-comment@v2.0.0
         with:
