@@ -12,12 +12,15 @@ jobs:
 
     steps:
       - name: Report Start Reason and Metadata
+        id: meta
         run: |
           echo "Starter is: ${{ github.actor }};"
           echo "Repo is: ${{ github.repository }};"
           echo "Trigger is: ${{ github.eventname }};"
           echo "Job is: ${{ github.job }};"
           echo "Job id is: ${{ github.run_id }};"
+          echo "::set-output name=trigger::${{ github.eventname }}"
+          
       - name: Checkout
         uses: actions/checkout@v2
       - name: Load Recent Acivities
@@ -45,6 +48,7 @@ jobs:
           echo "::set-output name=status::${{ job.status }}"
     outputs: 
       build_status: ${{ steps.report.outputs.status }} 
+      trigger: ${{ steps.meta.outputs.trigger }}
   
   getData:
     runs-on: ubuntu-latest
@@ -55,11 +59,15 @@ jobs:
       - name: Get Data
         id: metadata
         run: |
+          trigger=${{ needs.build.outputs.trigger }}
+          if [ $trigger -eq "" ]; then
+            trigger="workflow dispatch"
+          fi
           current=`date "+%Y-%m-%d"`
           currentTimestamp=$((`date -d "$current" +%s`))
           originTimestamp=$((`date -d "2022-04-27" +%s`))
           timegap=$(($(($(( $currentTimestamp - $originTimestamp )) / 86400000 )) + 1 ))
-          output="Today is ${current}, day ${timegap}. Todays build status is ${{ needs.build.outputs.build_status }}! Keep working hard, @Guleixibian2009!"
+          output="Today is ${current}, day ${timegap}. Todays build status is ${{ needs.build.outputs.build_status }}! Update trigger is ${trigger}. Keep working hard, @Guleixibian2009!"
           echo "::set-output name=message::${output}"
     outputs:
       message: ${{ steps.metadata.outputs.message }}
