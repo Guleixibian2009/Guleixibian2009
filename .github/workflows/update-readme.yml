@@ -81,21 +81,24 @@ jobs:
     runs-on: ubuntu-latest
     name: Record to issue
     needs: getData
+    env:
+          Message: ${{ needs.getData.outputs.message }}  
+          Daily: ${{ needs.getData.outputs.daily }}
 
     steps: 
-      - run: |
-          echo ${{ needs.getData.outputs.daily }}
+      - name: Check metadata
+        run: |
+          echo ${{ env.Daily }}
+          echo ${{ env.Message }}
       - name: Create or Update Comment
         uses: peter-evans/create-or-update-comment@v2.0.0
         with:
           issue-number: 2
           body: |
-            # Build Status Report :zap:
+            # Build Status Report :zap:  
             ${{ env.Message }}  
             ***
-            # Today's Hitokoto :book:
-            ${{ env.Daily }}
+            # Today's Hitokoto :book:  
+            ${{ env.Daily }}  
+            ***
             *This comment is automated via [GitHub Actions](https://Guleixibian2009/Guleixibian2009/actions/)*
-        env:
-          Message: ${{ needs.getData.outputs.message }}  
-          Daily: ${{ needs.getData.outputs.daily }}
