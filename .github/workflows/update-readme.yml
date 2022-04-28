@@ -45,22 +45,29 @@ jobs:
           echo "::set-output name=status::${{ job.status }}"
     outputs: 
       build_status: ${{ steps.report.outputs.status }} 
-  record:
+  getData:
     runs-on: ubuntu-latest
-    name: Record Status to my Issue
+    name: Get Metadata
     needs: build
     
     steps:
       - name: Get Data
+        id: metadata
         run: |
-          current=`date +%Y%m%d`
-          origin=20220427
-          currentTimestamp=$((`date -d "$current" +%s`*1000+`date "+%N"`))
-          originTimestamp=$((`date -d "$origin" +%s`*1000+`date "+%N"`))
-          timegap=$(($(( $currentTimestamp - $originTimestamp )) / 86400000))
-          echo $timegap
-          output="Today is ${date} , day ${timegap}. Todays build status is ${{ needs.build.outputs.build_status }}! Keep working hard, Guleixibian2009!"
-          echo $output
+          current=`date "+%Y-%m-%d"`
+          currentTimestamp=$((`date -d "$current" +%s`))
+          originTimestamp=$((`date -d "2022-04-27" +%s`))
+          timegap=$(($(($(( $currentTimestamp - $originTimestamp )) / 86400000 )) + 1 ))
+          output="Today is ${current}, day ${timegap}. Todays build status is ${{ needs.build.outputs.build_status }}! Keep working hard, Guleixibian2009!"
+          echo "::set-output name=message::${output}"
+    outputs:
+      message: ${{ steps.metadata.outputs.message }}
+  record:
+    runs-on: ubuntu-latest
+    name: Record to issue
+    needs: getData
+
+    steps:    
       - name: Write to issue
         uses: actions-cool/issues-helper@v3
         with:
@@ -68,5 +75,5 @@ jobs:
           token: ${{ secrets.METRICS_TOKEN }}
           issue-number: 2
           body: |
-            ${output}
+            ${{ needs.getData.outputs.message }}
             
