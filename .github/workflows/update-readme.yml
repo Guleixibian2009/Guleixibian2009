@@ -73,7 +73,7 @@ jobs:
           echo "::set-output name=sentence::${sentence}"
     outputs:
       message: ${{ steps.metadata.outputs.message }}
-      sentence: ${{ steps.metadata.outputs.sentence }}
+      sentence: ${{ steps.daily.outputs.sentence }}
 
   record:
     runs-on: ubuntu-latest
