@@ -76,9 +76,11 @@ jobs:
           issue-number: 2
           body: |
             # Build Status Report
-            ${{ steps.metadata.outputs.message }}  
+            ${Message}  
             ---
             *This comment is automated via [GitHub Actions](https://Guleixibian2009/Guleixibian2009/actions/)*
+        env:
+          Message: ${{ needs.getData.outputs.message }}  
 
 
   #email:
