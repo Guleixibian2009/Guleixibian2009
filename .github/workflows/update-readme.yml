@@ -60,7 +60,7 @@ jobs:
         id: metadata
         run: |
           trigger=${{ needs.build.outputs.trigger }}
-          if [ $trigger -eq "" ]; then
+          if [ "$trigger" -eq "" ]; then
             trigger="workflow dispatch"
           fi
           current=`date "+%Y-%m-%d"`
