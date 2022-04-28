@@ -71,7 +71,7 @@ jobs:
         run: |
           sudo apt-get install jq
           sentence=`curl https://api.uixsj.cn/hitokoto/get?type=en"&"code=json | jq '. ["content"]'`
-          echo "::set-output name=message::${sentence}"
+          echo "::set-output name=daily::${sentence}"
     outputs:
       message: ${{ steps.metadata.outputs.message }}
       daily: ${{ steps.metadata.outputs.daily }}
@@ -90,7 +90,7 @@ jobs:
             # Build Status Report :zap:
             ${{ env.Message }}  
             ***
-            # Today's Hitikoto :book:
+            # Today's Hitokoto :book:
             ${{ env.Daily }}
             *This comment is automated via [GitHub Actions](https://Guleixibian2009/Guleixibian2009/actions/)*
         env:
