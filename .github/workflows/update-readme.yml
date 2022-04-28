@@ -72,16 +72,17 @@ jobs:
     steps:    
       - name: Checkout
         uses: actions/checkout@v2.4.2
-      - name: Configure Git
-        run: |
-          git config --global user.name "GitHub Actions"
-          git config --global user.email "noreply@github.com"
       - name: Write to issue
-        uses: AlexRogalskiy/github-action-issue-commenter@v2.0.1
+        #uses: AlexRogalskiy/github-action-issue-commenter@v2.0.1
+        #with:
+          #GITHUB_TOKEN: ${{ secrets.METRICS_TOKEN }}
+          #requestId: 2
+          #message: ${{ needs.getData.outputs.message }}
+        uses: atlassian/gajira-comment@v2.0.2
         with:
-          GITHUB_TOKEN: ${{ secrets.METRICS_TOKEN }}
-          requestId: 2
-          message: ${{ needs.getData.outputs.message }}
+          issue: 2
+          comment: ${{ needs.getData.outputs.message }}
+
 
   #email:
     #runs-on: ubuntu-latest
