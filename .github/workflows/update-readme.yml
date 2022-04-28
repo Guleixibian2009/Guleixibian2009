@@ -56,7 +56,10 @@ jobs:
           date=`date +%Y%m%d`
           current=`date`
           origin=20220427
-          timegap=$(($(($((`date -d "$current" +%s`*1000+`date "+%N"`)) - $((`date -d "$origin" +%s`*1000+`date "+%N"`)))) / 86400000))
+          currentTimestamp=$((`date -d "$current" +%s`*1000+`date "+%N"`))
+          originTimestamp=$((`date -d "$origin" +%s`*1000+`date "+%N"`))
+          timegap=$(($(( $currentTimestamp - $originTimestamp )) / 86400000))
+          echo $timegap
           output="Today is ${date} , day ${timegap}. Todays build status is ${{ needs.build.outputs.build_status }}! Keep working hard, Guleixibian2009!"
           echo $output
       - name: Write to issue
