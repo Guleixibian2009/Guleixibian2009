@@ -70,6 +70,8 @@ jobs:
     needs: getData
 
     steps:    
+      - name: Checkout
+        uses: actions/checkout@v2.4.2
       - name: Write to issue
         uses: AlexRogalskiy/github-action-issue-commenter@v2.0.1
         with:
