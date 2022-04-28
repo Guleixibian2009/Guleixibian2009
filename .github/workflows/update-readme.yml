@@ -76,4 +76,19 @@ jobs:
           issue-number: 2
           body: |
             ${{ needs.getData.outputs.message }}
-            
+  email:
+    runs-on: ubuntu-latest
+    name: Email message
+    needs: getData
+
+    - name: Send me an email
+      uses: dawidd6/action-send-mail@v3.6.1
+      with:
+        server_address: smtp.live.com
+        server_port: 25
+        username: ${{ secrets.MAIL_USERNAME }}
+        password: ${{ secrets.MAIL_PASSWORD }}
+        subject: README has been updated!
+        to: guleixibian2009@outllok.com
+        from: Guleixibian2009
+        body: ${{ needs.getData.outputs.message }}
