@@ -69,7 +69,7 @@ jobs:
       - name: Get Sentence
         id: daily
         run: |
-          sentence=`curl https://api.uixsj.cn/hitokoto/get?type=en"&"code=json | jq '. ["content"]'`
+          sentence=`curl https://api.uixsj.cn/hitokoto/get?type=en&code=json | jq '. ["content"]'`
           echo "::set-output name=sentence::${sentence}"
     outputs:
       message: ${{ steps.metadata.outputs.message }}
