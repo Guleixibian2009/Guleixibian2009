@@ -90,4 +90,4 @@ jobs:
         with:
           to: guleixibian2009@outlook.com
           subject: Daily Update Status
-          body: "<h1>Build Status Report</h1><hr /><p style='font-family: Consolas; font-size: 16px;'>${{ needs.getData.outputs.message }}</p><hr /><span>This email is sent via GitHub Actions.</span><a href='https://github.com/guleixibian2009/guleixibian2009/actions/'>View Online Here!</a>"
+          body: "Build Status Report:\n${{ needs.getData.outputs.message }}\nThis email is sent via GitHub Actions."
