@@ -66,8 +66,15 @@ jobs:
           timegap=$(($(($(( $currentTimestamp - $originTimestamp )) / 86400000 )) + 1 ))
           output="Today is ${current}, day ${timegap}. Todays build status is ${{ needs.build.outputs.build_status }}! Update trigger is ${trigger}. Keep working hard, @Guleixibian2009!"
           echo "::set-output name=message::${output}"
+      - name: Get Sentence
+        id: daily
+        run: |
+          choco install jq
+          sentence=`curl https://api.uixsj.cn/hitokoto/get?type=en"&"code=json | jq '. ["content"]'`
+          echo "::set-output name=message::${sentence}"
     outputs:
       message: ${{ steps.metadata.outputs.message }}
+      daily: ${{ steps.metadata.outputs.daily }}
 
   record:
     runs-on: ubuntu-latest
@@ -80,9 +87,12 @@ jobs:
         with:
           issue-number: 2
           body: |
-            # Build Status Report
+            # Build Status Report :zap:
             ${{ env.Message }}  
             ***
+            # Today's Hitikoto :book:
+            ${{ env.Daily }}
             *This comment is automated via [GitHub Actions](https://Guleixibian2009/Guleixibian2009/actions/)*
         env:
           Message: ${{ needs.getData.outputs.message }}  
+          Daily: ${{ needs.getData.outputs.daily }}
