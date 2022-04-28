@@ -77,21 +77,7 @@ jobs:
           body: |
             # Build Status Report
             ${{ env.Message }}  
-            ---
+            ***
             *This comment is automated via [GitHub Actions](https://Guleixibian2009/Guleixibian2009/actions/)*
         env:
           Message: ${{ needs.getData.outputs.message }}  
-
-
-  #email:
-    #runs-on: ubuntu-latest
-    #name: Email message
-    #needs: getData
-    
-    #steps:
-    #  - name: Send me an email
-    #    uses: cinotify/github-action@v1.1.0
-    #    with:
-    #      to: guleixibian2009@outlook.com
-    #      subject: Daily Update Status
-    #      body: "Build Status Report:\n${{ needs.getData.outputs.message }}\nThis email is sent via GitHub Actions."
