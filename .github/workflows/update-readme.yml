@@ -72,7 +72,7 @@ jobs:
           raw=`curl https://saying.api.azwcl.com/saying/get | jq '. ["data"]["content"]'`
           sentence=`curl http://fanyi.youdao.com/translate?"&"doctype=json"&"type=AUTO"&"i=${raw} | jq '. ["translateResult"][0][0]["tgt"]'`
           echo "${sentence}"
-          echo "::set-output name=sentence::${sentence}"
+          echo "::set-output name=sentence::${sentence//"/}"
     outputs:
       message: ${{ steps.metadata.outputs.message }}
       sentence: ${{ steps.daily.outputs.sentence }}
