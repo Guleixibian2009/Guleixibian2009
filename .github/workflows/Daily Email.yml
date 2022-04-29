@@ -1,0 +1,16 @@
+name: Daily Email for me
+
+on:
+  schedule:
+    - cron: '0 4/19 * * *'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Get weather
+        run: |
+          curl 
+ 
