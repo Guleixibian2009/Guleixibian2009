@@ -66,16 +66,8 @@ jobs:
           timegap=$(($(($(( $currentTimestamp - $originTimestamp )) / 86400000 )) + 1 ))
           output="Today is ${current}, day ${timegap}. Todays build status is ${{ needs.build.outputs.build_status }}! Update trigger is ${trigger}. Keep working hard, @Guleixibian2009!"
           echo "::set-output name=message::${output}"
-      - name: Get Sentence
-        id: daily
-        run: |
-          raw=`curl https://saying.api.azwcl.com/saying/get | jq '. ["data"]["content"]'`
-          sentence=`curl http://fanyi.youdao.com/translate?"&"doctype=json"&"type=AUTO"&"i=${raw} | jq '. ["translateResult"][0][0]["tgt"]'`
-          echo "${sentence}"
-          echo "::set-output name=sentence::${sentence//"/}"
     outputs:
       message: ${{ steps.metadata.outputs.message }}
-      sentence: ${{ steps.daily.outputs.sentence }}
 
   record:
     runs-on: ubuntu-latest
@@ -85,7 +77,6 @@ jobs:
     steps: 
       - name: Check metadata
         run: |
-          echo ${{ needs.getData.outputs.sentence }}
           echo ${{ needs.getData.outputs.message }}  
       - name: Create or Update Comment
         uses: peter-evans/create-or-update-comment@v2.0.0
@@ -94,8 +85,5 @@ jobs:
           body: |
             # Build Status Report :zap:  
             ${{ needs.getData.outputs.message }}  
-            ***
-            # Today's Hitokoto :book:  
-            ${{ needs.getData.outputs.sentence }}
             ***
             *This comment is automated via [GitHub Actions](https://Guleixibian2009/Guleixibian2009/actions/)*
