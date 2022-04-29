@@ -23,7 +23,7 @@
 ### My Recent Acivities! :zap:
 ![](https://github-readme-stats.vercel.app/api?username=Guleixibian2009&show_icons=true&icon_color=CE1D2D&text_color=718096&bg_color=ffffff&hide_title=false)   
 <!--START_SECTION:activity-->
-1. 🗣 Commented on [#2](https://github.com/Guleixibian2009/Guleixibian2009/issues/2) in [Guleixibian2009/Guleixibian2009](https://github.com/Guleixibian2009/Guleixibian2009)
+1. ❗️ Opened issue [#3](https://github.com/Guleixibian2009/Guleixibian2009/issues/3) in [Guleixibian2009/Guleixibian2009](https://github.com/Guleixibian2009/Guleixibian2009)
 2. 🗣 Commented on [#2](https://github.com/Guleixibian2009/Guleixibian2009/issues/2) in [Guleixibian2009/Guleixibian2009](https://github.com/Guleixibian2009/Guleixibian2009)
 3. 🗣 Commented on [#2](https://github.com/Guleixibian2009/Guleixibian2009/issues/2) in [Guleixibian2009/Guleixibian2009](https://github.com/Guleixibian2009/Guleixibian2009)
 4. 🗣 Commented on [#2](https://github.com/Guleixibian2009/Guleixibian2009/issues/2) in [Guleixibian2009/Guleixibian2009](https://github.com/Guleixibian2009/Guleixibian2009)
