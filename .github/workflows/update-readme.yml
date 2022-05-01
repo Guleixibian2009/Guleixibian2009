@@ -61,7 +61,7 @@ jobs:
         run: |
           trigger=${{ needs.build.outputs.trigger }}
           current=`date "+%Y-%m-%d"`
-          currentTimestamp=$((`date -d "$current" +%s`))
+          currentTimestamp=$(($((`date -d "$current" +%s`))+28800))
           originTimestamp=$((`date -d "2022-04-27" +%s`))
           timegap=$(($(( $currentTimestamp - $originTimestamp )) / 86400 ))
           output="Today is ${current}, day ${timegap}. Todays build status is ${{ needs.build.outputs.build_status }}! Update trigger is ${trigger}. Keep working hard, @Guleixibian2009!"
