@@ -1,6 +1,8 @@
-name: CI
+name: Daily weather email
 
 on:
+  schedule:
+    - cron: '0 4/23 * * *'
 
   workflow_dispatch:
 
@@ -10,5 +12,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout repo
+        uses: actions/checkout@v3
+      
 

@@ -1,4 +1,4 @@
-<h1 align="center"><img src="https://raw.githubusercontent.com/Guleixibian2009/Guleixibian2009/master/typing.svg" /></h1>
+<h1 align="center"><img src="https://raw.githubusercontent.com/Guleixibian2009/Guleixibian2009/master/dist/typing.svg" /></h1>
 <h3 align="center">A middle school student from Jiangsu, China</h3>
 
 - 🔭 I’m currently working on [Awesome-Bootstrap5](https://guleixibian2009.github.io/awesome-bs5/)
