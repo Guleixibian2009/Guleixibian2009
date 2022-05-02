@@ -5,7 +5,7 @@
 
 - 🌱 I’m currently learning **HTML and JavaScript**
 
-- 👨‍💻 All of my projects are available at [github.com/Guleixibian2009](github.com/Guleixibian2009)
+- 👨‍💻 All of my projects are available at [github.com/Guleixibian2009](https://github.com/Guleixibian2009)
 
 - 📝 I sometimes write articles on [https://guleixibian2009.github.io/](https://guleixibian2009.github.io/)
 
