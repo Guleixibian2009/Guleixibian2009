@@ -8,11 +8,46 @@ on:
 
 
 jobs:
-  build:
+  data:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
-      
+      - name: Get data
+        id: data
+        run: ./dist/forecast.sh
+      - name: Push to GitHub
+        uses: endbug/add-and-commit@v7.2.1
+        with:
+          branch: master
+          message: 'Daily Update weather image'
+
+    outputs:
+      short: ${{ steps.data.outputs.short }}
+      long: ${{ steps.data.outputs.long }}
+
+  issue:
+    runs-on: ubuntu-latest
+    needs: data
+
+    steps:
+      - name: Create or Update Comment
+        uses: peter-evans/create-or-update-comment@v2.0.0
+        with:
+          issue-number: 4
+          body: |
+            # Today's weather report :zap:  
+            ## Short description  
+            ${{ needs.data.outputs.short }}  
+            ***
+            ## Long description
+            ${{ needs.data.outputs.long }}
+            ***
+            ## Forecast image
+            ![Weather](https://raw.githubusercontent.com/Guleixibian2009/Guleixibian2009/master/dist/weather.png)
+            ***
+            *This comment is automated via [GitHub Actions](https://Guleixibian2009/Guleixibian2009/actions/)*
+
+
 
