@@ -3,7 +3,7 @@
 #Link for this: wttr.in/SuZhou?format=3
 shortdescription=`curl -s wttr.in/SuZhou?format=3`
 echo $shortdescription
-echo "::set-output name=short:${shortdescription}"
+echo "::set-output name=short::${shortdescription}"
 
 #Then we want a longer description
 #Link for this: wttr.in/SuZhou?format=j1
@@ -100,7 +100,7 @@ visi=`echo $longraw | jq '. ["weather"][0]["hourly"][0]["visibility"]'`
 updateTime=`echo $longraw | jq '. ["current_condition"][0]["localObsDateTime"]'`
 long="今天是${nowDate}，${nowWeekday}。现在的天气是${nowWeather:1:${#nowWeather}-2}，${nowTempC:1:${#nowTempC}-2}℃。今天日出${sunrise:1:${#sunrise}-2}，日落${sunset:1:${#sunset}-2}。月出${moonrise:1:${#moonrise}-2}，月落${moonset:1:${#moonset}-2}，月相是${moonPhase:1:${#moonPhase}-2}。今天${minTempC:1:${#minTempC}-2}℃~${maxTempC:1:${#maxTempC}-2}℃，均温${avgTempC:1:${#avgTempC}-2}℃。${windDir}风${windSpeed}级，云度${cloudCover:1:${#cloudCover}-2}%，降雨可能性${chanceRain:1:${#chanceRain}-2}%，紫外线${uvIndex:1:${#uvIndex}-2}级，能见度${visi:1:${#visi}-2}公里。注：wttr.in JSON 更新时间：${updateTime:1:${#updateTime}-2}"
 echo $long
-echo "::set-output name=long:${long}"
+echo "::set-output name=long::${long}"
 
 #Next we want a forecast graph
 #Link for this: wttr.in/SuZhou.png?lang=zh
