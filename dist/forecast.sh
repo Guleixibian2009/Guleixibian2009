@@ -1,13 +1,13 @@
 #First we want a short description
 #Like "SuZhou: ☁️ +13°C"
 #Link for this: wttr.in/SuZhou?format=3
-shortdescription=`curl -s wttr.in/SuZhou?format=3`
+shortdescription=`curl -s wttr.in/SuZhou?m"&"format=3`
 echo $shortdescription
 echo "::set-output name=short::${shortdescription}"
 
 #Then we want a longer description
 #Link for this: wttr.in/SuZhou?format=j1
-longraw=`curl -s wttr.in/SuZhou?format=j1'&'lang=zh`
+longraw=`curl -s wttr.in/SuZhou?format=j1'&'lang=zh"&"m`
 nowDate=`date '+%Y%m%d'`
 nowWeekday=`date '+%w'`
 case $nowWeekday in
@@ -104,4 +104,4 @@ echo "::set-output name=long::${long}"
 
 #Next we want a forecast graph
 #Link for this: wttr.in/SuZhou.png?lang=zh
-graph=`curl -s -o ./dist/weather.png wttr.in/SuZhou.png?lang=zh`
+graph=`curl -s -o ./dist/weather.png wttr.in/SuZhou.png?m"&"lang=zh`
