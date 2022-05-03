@@ -9,7 +9,7 @@ on:
 
 jobs:
   data:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
       - name: Checkout repo
@@ -19,7 +19,7 @@ jobs:
         run: |
           cd ${{ github.workspace }}
           ls 
-          ${{ github.workspace }}/dist/forecast.sh
+          sh ${{ github.workspace }}/dist/forecast.sh
       - name: Push to GitHub
         uses: endbug/add-and-commit@v7.2.1
         with:
