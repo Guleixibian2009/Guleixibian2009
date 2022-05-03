@@ -42,17 +42,17 @@ jobs:
         with:
           issue-number: 4
           body: |
-            # Today's weather report :zap:  
-            ## Short description  
+            # 今日天气 :zap:  
+            ## 总结  
             ${{ needs.data.outputs.short }}  
             ***
-            ## Long description
+            ## 其他信息
             ${{ needs.data.outputs.long }}
             ***
-            ## Forecast image
+            ## 预报图
             ![Weather](https://raw.githubusercontent.com/Guleixibian2009/Guleixibian2009/master/dist/weather.png)
             ***
-            *This comment is automated via [GitHub Actions](https://Guleixibian2009/Guleixibian2009/actions/)*
+            *这条评论由[GitHub Actions](https://Guleixibian2009/Guleixibian2009/actions/)自动化发出！*
 
 
 
