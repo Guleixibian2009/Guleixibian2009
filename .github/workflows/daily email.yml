@@ -2,7 +2,7 @@ name: Daily weather email
 
 on:
   schedule:
-    - cron: '0 4/23 * * *'
+    - cron: '0 4/19 * * *'
 
   workflow_dispatch:
 
