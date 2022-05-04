@@ -27,10 +27,16 @@ jobs:
         with:
           branch: master
           message: 'Daily Update weather image'
+      - name: Get hitokoto
+        id: hito
+        run: |
+          sentence=`curl https://api.uixsj.cn/hitokoto/get?code=json | jq '. ["content"]'`
+          echo "::set-output name=hito::${sentence}"
 
     outputs:
       short: ${{ steps.data.outputs.short }}
       long: ${{ steps.data.outputs.long }}
+      hito: ${{ steps.hito.outputs.hito }}
 
   issue:
     runs-on: ubuntu-latest
@@ -51,6 +57,9 @@ jobs:
             ***
             ## 预报图
             ![Weather](https://raw.githubusercontent.com/Guleixibian2009/Guleixibian2009/master/dist/weather.png)
+            ***
+            ## 今天的一言
+            ${{ needs.data.outputs.hito }}
             ***
             *这条评论由[GitHub Actions](https://Guleixibian2009/Guleixibian2009/actions/)自动化发出！*
 
