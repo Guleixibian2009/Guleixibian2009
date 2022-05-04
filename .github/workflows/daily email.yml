@@ -21,7 +21,7 @@ jobs:
         run: |
           cd ${{ github.workspace }}
           ls
-          ${{ github.workspace }}/dist/forecast.sh
+          sudo ${{ github.workspace }}/dist/forecast.sh
       - name: Push to GitHub
         uses: endbug/add-and-commit@v7.2.1
         with:
