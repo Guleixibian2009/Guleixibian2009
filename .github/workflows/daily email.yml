@@ -11,7 +11,7 @@ jobs:
   data:
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repo
@@ -21,7 +21,7 @@ jobs:
         run: |
           cd ${{ github.workspace }}
           ls
-          sh ${{ github.workspace }}/dist/forecast.sh
+          ${{ github.workspace }}/dist/forecast.sh
       - name: Push to GitHub
         uses: endbug/add-and-commit@v7.2.1
         with:
@@ -30,7 +30,6 @@ jobs:
       - name: Get hitokoto
         id: hito
         run: |
-          bash
           sentence=`curl https://api.uixsj.cn/hitokoto/get?code=json | jq '. ["content"]'`
           echo "::set-output name=hito::${sentence}"
 
