@@ -20,7 +20,7 @@ jobs:
         id: data
         run: |
           cd ${{ github.workspace }}
-          ls 
+          ls
           sh ${{ github.workspace }}/dist/forecast.sh
       - name: Push to GitHub
         uses: endbug/add-and-commit@v7.2.1
@@ -30,6 +30,7 @@ jobs:
       - name: Get hitokoto
         id: hito
         run: |
+          bash
           sentence=`curl https://api.uixsj.cn/hitokoto/get?code=json | jq '. ["content"]'`
           echo "::set-output name=hito::${sentence}"
 
@@ -48,9 +49,9 @@ jobs:
         with:
           issue-number: 4
           body: |
-            # 今日天气 :zap:  
-            ## 总结  
-            ${{ needs.data.outputs.short }}  
+            # 今日天气 :zap:
+            ## 总结
+            ${{ needs.data.outputs.short }}
             ***
             ## 其他信息
             ${{ needs.data.outputs.long }}
@@ -62,6 +63,3 @@ jobs:
             ${{ needs.data.outputs.hito }}
             ***
             *这条评论由[GitHub Actions](https://Guleixibian2009/Guleixibian2009/actions/)自动化发出！*
-
-
-
