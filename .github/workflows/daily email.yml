@@ -57,10 +57,10 @@ jobs:
           body: |
             # 今日天气 :zap:
             ## 总结
-            ${{ needs.data.outputs.short }}
+            ${{ needs.weather.outputs.short }}
             ***
             ## 其他信息
-            ${{ needs.data.outputs.long }}
+            ${{ needs.weather.outputs.long }}
             ***
             ## 预报图
             ![Weather](https://raw.githubusercontent.com/Guleixibian2009/Guleixibian2009/master/dist/weather.png)
