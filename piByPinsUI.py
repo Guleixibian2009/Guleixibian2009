@@ -76,15 +76,30 @@ class Needle(Sprite):
 
     def checkCollide(self, game: Game) -> None:
         for lineY in lineYlist:
-            if inRange(lineY, self.y1, self.y2) and (inRange(self.x1, 0, 1000) or inRange(self.x2, 0, 1000)):
+            if inRange(lineY, self.y1, self.y2):
                 game.canvas.itemconfig(self.name, fill="red")
                 game.total += 1
+                return True
+                
 
 g = Game()
+drawnLine = 0
+collidedline = 0
 for lineY in lineYlist:
     paraLine = ParaLine(g, lineY)
 for x in range(1, 1001):
     needle = Needle(g)
     needle.checkCollide(g)
+while drawnline <= 1000:
+    needle = Needle(g)
+    collided = needle.checkCollide(g)
+    if collided and (inRange(needle.x1, 0, 1000) or inRange(needle.x2, 0, 1000):
+        collidedline += 1
+        drawnline +=1
+    elif (not collided) and (inRange(needle.x1, 0, 1000) or inRange(needle.x2, 0, 1000):
+        drawnline +=1
+    else:
+        pass
+        
 print(1000 / g.total)
 g.mainloop()
