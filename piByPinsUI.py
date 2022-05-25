@@ -5,7 +5,7 @@ import math, random, time
 from tkinter import *
 
 print('''This is a Python program to get the approximate value of PI. It simulated the Buffon's needle problem by dropping 1000 needles.
-(With UI this time!!!)
+(With GUI this time!!!)
 Here we go...
 ''')
 
@@ -36,7 +36,6 @@ class Game:
 class Sprite:
     def __init__(self, game):
         self.game = game
-        self.endgame = False
         self.coordinates = None
     def coords(self):
         return self.coordinates
@@ -58,10 +57,10 @@ class ParaLine(Sprite):
 class Needle(Sprite):
     def __init__(self, game: Game) -> None:
         Sprite.__init__(self, game)
-        self.x1 = random.randint(-24, 1024)
+        self.x1 = random.randint(0, 1000)
         self.y1 = random.randint(0, 528)
         self.angle = random.randint(0, 180)
-
+        
         if inRange(self.angle, 0, 90):
             self.x2 = self.x1 - math.cos(math.radians(90 - self.angle)) * 24
         elif inRange(self.angle, 91, 180):
@@ -74,12 +73,14 @@ class Needle(Sprite):
 
         self.name = game.canvas.create_line(self.x1, self.y1, self.x2, self.y2, fill="black")
 
-    def checkCollide(self, game: Game) -> None:
+    def checkCollide(self, game: Game) -> bool:
         for lineY in lineYlist:
             if inRange(lineY, self.y1, self.y2):
                 game.canvas.itemconfig(self.name, fill="red")
                 game.total += 1
                 return True
+            else:
+                pass
                 
 
 g = Game()
@@ -87,19 +88,24 @@ drawnLine = 0
 collidedline = 0
 for lineY in lineYlist:
     paraLine = ParaLine(g, lineY)
-for x in range(1, 1001):
-    needle = Needle(g)
-    needle.checkCollide(g)
-while drawnline <= 1000:
+while drawnLine < 1000:
     needle = Needle(g)
     collided = needle.checkCollide(g)
-    if collided and (inRange(needle.x1, 0, 1000) or inRange(needle.x2, 0, 1000):
-        collidedline += 1
-        drawnline +=1
-    elif (not collided) and (inRange(needle.x1, 0, 1000) or inRange(needle.x2, 0, 1000):
-        drawnline +=1
-    else:
-        pass
+    if collided:
+        if (528 >= needle.y1 >= 0) and (0 <= needle.y2 <= 528) and (1000 >= needle.x1 >= 0) and (0 <= needle.x2 <= 1000):
+            collidedline += 1
+            drawnLine += 1
+        else:
+            g.canvas.itemconfig(needle.name, fill='white')
+    elif (not collided):
+        if (528 >= needle.y1 >= 0) and (0 <= needle.y2 <= 528) and (1000 >= needle.x1 >= 0) and (0 <= needle.x2 <= 1000):
+            drawnLine += 1
+        else:
+            g.canvas.itemconfig(needle.name, fill='white')
         
-print(1000 / g.total)
+print(1000 / collidedline)
+def on_closing():
+    g.running = False
+
+g.tk.protocol("WM_DELETE_WINDOW", on_closing)
 g.mainloop()
