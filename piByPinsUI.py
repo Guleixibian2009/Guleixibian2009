@@ -101,9 +101,8 @@ while drawnLine < 1000:
     elif (not collided) and inside:
         drawnLine += 1
     elif not inside:
-        pass
-        
-        
+        g.canvas.itemconfig(needle.name, fill='whitesmoke')
+
 print(1000 / collidedline)
 def on_closing():
     g.running = False
