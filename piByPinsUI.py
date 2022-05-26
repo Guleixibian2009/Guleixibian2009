@@ -81,6 +81,9 @@ class Needle(Sprite):
                 return True
             else:
                 pass
+
+    def checkInside(self) -> bool:
+        return True if inRange(self.x2, 0, 1000) and inRange(self.y2, 0, 528) else False
                 
 
 g = Game()
@@ -91,17 +94,15 @@ for lineY in lineYlist:
 while drawnLine < 1000:
     needle = Needle(g)
     collided = needle.checkCollide(g)
-    if collided:
-        if (528 >= needle.y1 >= 0) and (0 <= needle.y2 <= 528) and (1000 >= needle.x1 >= 0) and (0 <= needle.x2 <= 1000):
-            collidedline += 1
-            drawnLine += 1
-        else:
-            g.canvas.itemconfig(needle.name, fill='white')
-    elif (not collided):
-        if (528 >= needle.y1 >= 0) and (0 <= needle.y2 <= 528) and (1000 >= needle.x1 >= 0) and (0 <= needle.x2 <= 1000):
-            drawnLine += 1
-        else:
-            g.canvas.itemconfig(needle.name, fill='white')
+    inside = needle.checkInside()
+    if collided and inside:
+        drawnLine += 1
+        collidedline += 1
+    elif (not collided) and inside:
+        drawnLine += 1
+    elif not inside:
+        pass
+        
         
 print(1000 / collidedline)
 def on_closing():
