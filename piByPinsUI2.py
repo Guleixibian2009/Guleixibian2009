@@ -52,12 +52,12 @@ class Needle(Sprite):
         elif inRange(self.angle, 91, 180):
             self.y2 = self.y1 + math.sin(math.radians(self.angle - 90)) * 24
 
-        self.name = None #####
+        self.name = pygame.draw.line(screen, (0,0,0), (self.x1, self.y1), (self.x2, self.y2))
 
     def checkCollide(self) -> bool:
         for lineY in lineYlist:
             if inRange(lineY, self.y1, self.y2):
-                ### Red
+                pygame.draw.line(screen, (255,0,0), (self.x1, self.y1), (self.x2, self.y2))
                 return True
             else:
                 pass
@@ -65,10 +65,11 @@ class Needle(Sprite):
     def checkInside(self) -> bool:
         return True if inRange(self.x2, 0, 1000) and inRange(self.y2, 0, 528) else False
 
-while True:
+running = True
+while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
-            sys.exit()
+            running = False
 
     screen.fill((255,255,255))
 
@@ -76,7 +77,23 @@ while True:
     width = 1
     for lineY in lineYlist:
         pygame.draw.line(screen,color,(0,lineY),(1000,lineY),width)
+
+    drawnLine = collidedline = 0
+
     
+    needle = Needle()
+    collided = needle.checkCollide()
+    inside = needle.checkInside()
+    if collided and inside:
+        drawnLine += 1
+        collidedline += 1
+    elif (not collided) and inside:
+        drawnLine += 1
+    elif not inside:
+        pass
+    
+    print(1000 / collidedline)
+    running = False
 
     pygame.display.update()
     pygame.display.set_caption('Buffon')
