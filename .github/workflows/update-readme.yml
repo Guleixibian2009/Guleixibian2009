@@ -29,7 +29,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           COMMIT_MSG: 'Update my README via GitHub Actions'
-          MAX_LINES: 10
+          MAX_LINES: 30
       - name: Generate the Snake
         uses: Platane/snk@master
         id: snake-gif
