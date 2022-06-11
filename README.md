@@ -50,7 +50,7 @@
 <!--START_SECTION:activity-->
 1. 🗣 Commented on [#18413](https://github.com/jsdelivr/jsdelivr/issues/18413) in [jsdelivr/jsdelivr](https://github.com/jsdelivr/jsdelivr)
 2. 🗣 Commented on [#18413](https://github.com/jsdelivr/jsdelivr/issues/18413) in [jsdelivr/jsdelivr](https://github.com/jsdelivr/jsdelivr)
-3. 🗣 Commented on [#18397](https://github.com/jsdelivr/jsdelivr/issues/18397) in [jsdelivr/jsdelivr](https://github.com/jsdelivr/jsdelivr)
+3. 🗣 Commented on [#18413](https://github.com/jsdelivr/jsdelivr/issues/18413) in [jsdelivr/jsdelivr](https://github.com/jsdelivr/jsdelivr)
 4. 🗣 Commented on [#18397](https://github.com/jsdelivr/jsdelivr/issues/18397) in [jsdelivr/jsdelivr](https://github.com/jsdelivr/jsdelivr)
 5. 🗣 Commented on [#18397](https://github.com/jsdelivr/jsdelivr/issues/18397) in [jsdelivr/jsdelivr](https://github.com/jsdelivr/jsdelivr)
 <!--END_SECTION:activity-->
