@@ -8,6 +8,8 @@ setx.exe "https_proxy" "http://192.168.0.24:31181" /m
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
 if (choco -v) {
     choco install croc
-    setx.exe "PATH" "%PATH%; C:\ProgramData\chocolatey\lib\croc\tools" /m
+    cmd
+    setx.exe "Path" "%Path%; C:\ProgramData\chocolatey\lib\croc\tools" /m
+    powershell
     RefreshEnv.cmd
 }
