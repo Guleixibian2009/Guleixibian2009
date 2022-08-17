@@ -48,9 +48,9 @@
 ### My Recent Acivities! :zap:
 ![](https://github-readme-stats.vercel.app/api?username=Guleixibian2009&show_icons=true&icon_color=CE1D2D&text_color=718096&bg_color=ffffff&hide_title=false)   
 <!--START_SECTION:activity-->
-1. ❗️ Closed issue [#18413](https://github.com/jsdelivr/jsdelivr/issues/18413) in [jsdelivr/jsdelivr](https://github.com/jsdelivr/jsdelivr)
-2. 🗣 Commented on [#18413](https://github.com/jsdelivr/jsdelivr/issues/18413) in [jsdelivr/jsdelivr](https://github.com/jsdelivr/jsdelivr)
-3. 🗣 Commented on [#18413](https://github.com/jsdelivr/jsdelivr/issues/18413) in [jsdelivr/jsdelivr](https://github.com/jsdelivr/jsdelivr)
+1. 🎉 Merged PR [#1](https://github.com/Guleixibian2009/hexo-website-tutorial/pull/1) in [Guleixibian2009/hexo-website-tutorial](https://github.com/Guleixibian2009/hexo-website-tutorial)
+2. 💪 Opened PR [#1](https://github.com/Guleixibian2009/hexo-website-tutorial/pull/1) in [Guleixibian2009/hexo-website-tutorial](https://github.com/Guleixibian2009/hexo-website-tutorial)
+3. ❗️ Closed issue [#18413](https://github.com/jsdelivr/jsdelivr/issues/18413) in [jsdelivr/jsdelivr](https://github.com/jsdelivr/jsdelivr)
 4. 🗣 Commented on [#18413](https://github.com/jsdelivr/jsdelivr/issues/18413) in [jsdelivr/jsdelivr](https://github.com/jsdelivr/jsdelivr)
 5. 🗣 Commented on [#18413](https://github.com/jsdelivr/jsdelivr/issues/18413) in [jsdelivr/jsdelivr](https://github.com/jsdelivr/jsdelivr)
 <!--END_SECTION:activity-->
